@@ -1,6 +1,5 @@
 package pl.hetman.wiktoria.solvd.persistence.impl;
 
-import pl.hetman.wiktoria.solvd.model.Toy;
 import pl.hetman.wiktoria.solvd.model.ToyBrand;
 import pl.hetman.wiktoria.solvd.persistence.Repository;
 
@@ -18,7 +17,7 @@ public class ToyBrandRepository implements Repository<ToyBrand> {
     }
 
     @Override
-    public void updateById(Long id, Toy toy) {
+    public void updateById(Long id, ToyBrand toyBrand) {
 
     }
 
