@@ -25,7 +25,7 @@ class ToyRepositoryTest {
 
         //then
         Assertions.assertAll(
-                () -> Assertions.assertNotNull(toyOptional.isPresent(), "Optional is not present"),
+                () -> Assertions.assertTrue(toyOptional.isPresent(), "Optional is not present"),
                 () -> Assertions.assertNotNull(toyOptionalUnpacked.getName(), "toyOptionalUnpacked.getName() is null")
         );
     }
