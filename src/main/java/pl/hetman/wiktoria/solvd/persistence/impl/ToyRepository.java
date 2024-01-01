@@ -29,8 +29,12 @@ public class ToyRepository implements Repository<Toy> {
         try (Connection connection = ConnectionPool.getInstance().take().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_TOY_QUERY);
         ) {
-
-            if (toy == null) {
+            if(toy.getId()!=null){
+                Toy foundedToy = findById(toy.getId()).orElse(null);
+                if(foundedToy != null){
+                    throw new ToyShopException("Can't create a toy. Toy already exists.");
+                }
+            } else if (toy == null) {
                 LOGGER.warn("ToyShopException");
                 throw new ToyShopException("Can't create a toy. Object is empty.");
             } else if (toy.getName().equals(null)) {

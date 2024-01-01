@@ -95,4 +95,21 @@ class ToyRepositoryTest {
         Assertions.assertNull(afterDeleteToy, "afterDeleteToy is not null");
 
     }
+
+    @Test
+    void createAlreadyExist() {
+        //given
+        ToyRepository toyRepository = new ToyRepository();
+        Toy toy = new Toy();
+        toy.setId(1L);
+        toy.setName("Lego Minecraft");
+
+        //when
+
+        //then
+        Assertions.assertThrows(
+                RuntimeException.class,
+                () -> toyRepository.create(toy)
+        );
+    }
 }
