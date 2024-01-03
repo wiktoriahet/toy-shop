@@ -1,0 +1,195 @@
+{
+  "toys": [
+    {
+      "id": 1,
+      "name": "Lego Minecraft"
+    },
+    {
+      "id": 2,
+      "name": "Barbie Actress"
+    },
+    {
+      "id": 3,
+      "name": "Dinosaur Plushie"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jim Jam"
+    },
+    {
+      "id": 3,
+      "name": "Bob Bab"
+    }
+  ],
+  "employeesContacts": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "emails": [
+        {
+          "id": 3,
+          "email": "johndoe1@mail.com"
+        },
+        {
+          "id": 4,
+          "email": "johndoe2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 1,
+          "phone": 485485485
+        },
+        {
+          "id": 2,
+          "phone": 584584584
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "emails": [
+        {
+          "id": 5,
+          "email": "jimjam1@mail.com"
+        },
+        {
+          "id": 6,
+          "email": "jimjam2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 3,
+          "phone": 963963963
+        },
+        {
+          "id": 4,
+          "phone": 369369369
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "employeeId": 3,
+      "emails": [
+        {
+          "id": 1,
+          "email": "bobbab1@mail.com"
+        },
+        {
+          "id": 2,
+          "email": "bobbab2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 5,
+          "phone": 852852852
+        },
+        {
+          "id": 6,
+          "phone": 258258258
+        }
+      ]
+    }
+  ],
+  "ordersDates": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "date": "1986-04-08 12:30:00"
+    },
+    {
+      "id": 2,
+      "orderId": 2,
+      "date": "1987-04-08 12:30:00"
+    },
+    {
+      "id": 3,
+      "orderId": 3,
+      "date": "1988-04-08 12:30:00"
+    }
+  ],
+  "suppliersContacts": [
+    {
+      "id": 1,
+      "supplierId": 1,
+      "emails": [
+        {
+          "id": 11,
+          "email": "sup1@mail.com"
+        },
+        {
+          "id": 22,
+          "email": "sup2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 11,
+          "phone": 842684268
+        },
+        {
+          "id": 22,
+          "phone": 896547896
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "supplierId": 2,
+      "emails": [
+        {
+          "id": 33,
+          "email": "supsup1@mail.com"
+        },
+        {
+          "id": 44,
+          "email": "supsup2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 33,
+          "phone": 888888888
+        },
+        {
+          "id": 44,
+          "phone": 888888887
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "supplierId": 3,
+      "emails": [
+        {
+          "id": 55,
+          "email": "supsupsup1@mail.com"
+        },
+        {
+          "id": 66,
+          "email": "supsupsup2@mail.com"
+        }
+      ],
+      "phones": [
+        {
+          "id": 55,
+          "phone": 999666333
+        },
+        {
+          "id": 66,
+          "phone": 333666555
+        }
+      ]
+    }
+  ]
+}

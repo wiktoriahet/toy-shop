@@ -1,4 +1,4 @@
-package pl.hetman.wiktoria.solvd;
+package pl.hetman.wiktoria.solvd.jaxb;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;

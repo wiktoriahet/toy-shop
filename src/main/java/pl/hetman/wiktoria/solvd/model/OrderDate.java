@@ -1,5 +1,6 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import pl.hetman.wiktoria.solvd.jaxb.LocalDateTimeAdapter;
@@ -10,6 +11,7 @@ public class OrderDate {
 
     private Long id;
     private Long orderId;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
 
     public OrderDate() {
