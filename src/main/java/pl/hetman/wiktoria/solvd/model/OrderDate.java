@@ -1,8 +1,13 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import pl.hetman.wiktoria.solvd.jaxb.LocalDateTimeAdapter;
+
 import java.time.LocalDateTime;
 
 public class OrderDate {
+
     private Long id;
     private Long orderId;
     private LocalDateTime date;
@@ -16,6 +21,7 @@ public class OrderDate {
         this.date = date;
     }
 
+    @XmlAttribute(name = "id")
     public Long getId() {
         return id;
     }
@@ -32,6 +38,7 @@ public class OrderDate {
         this.orderId = orderId;
     }
 
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     public LocalDateTime getDate() {
         return date;
     }

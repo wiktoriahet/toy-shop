@@ -1,17 +1,25 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
 import java.util.List;
 
+@XmlRootElement(name = "ToyShop")
 public class ToyShop {
+
     private List<Toy> toys;
     private List<Employee> employees;
-    private List<EmployeeContact> employeeContacts;
-    private List<OrderDate> orderDates;
-    private List<SupplierContact> supplierContacts;
+    private List<EmployeeContact> employeesContacts;
+    private List<OrderDate> ordersDates;
+    private List<SupplierContact> suppliersContacts;
 
     public ToyShop() {
     }
 
+    @XmlElementWrapper(name = "toys")
+    @XmlElement(name = "toy")
     public List<Toy> getToys() {
         return toys;
     }
@@ -20,6 +28,8 @@ public class ToyShop {
         this.toys = toys;
     }
 
+    @XmlElementWrapper(name = "employees")
+    @XmlElement(name = "employee")
     public List<Employee> getEmployees() {
         return employees;
     }
@@ -28,28 +38,34 @@ public class ToyShop {
         this.employees = employees;
     }
 
-    public List<EmployeeContact> getEmployeeContacts() {
-        return employeeContacts;
+    @XmlElementWrapper(name = "employeesContacts")
+    @XmlElement(name = "employeeContact")
+    public List<EmployeeContact> getEmployeesContacts() {
+        return employeesContacts;
     }
 
-    public void setEmployeeContacts(List<EmployeeContact> employeeContacts) {
-        this.employeeContacts = employeeContacts;
+    public void setEmployeesContacts(List<EmployeeContact> employeesContacts) {
+        this.employeesContacts = employeesContacts;
     }
 
-    public List<OrderDate> getOrderDates() {
-        return orderDates;
+    @XmlElementWrapper(name = "ordersDates")
+    @XmlElement(name = "orderDate")
+    public List<OrderDate> getOrdersDates() {
+        return ordersDates;
     }
 
-    public void setOrderDates(List<OrderDate> orderDates) {
-        this.orderDates = orderDates;
+    public void setOrdersDates(List<OrderDate> ordersDates) {
+        this.ordersDates = ordersDates;
     }
 
-    public List<SupplierContact> getSupplierContacts() {
-        return supplierContacts;
+    @XmlElementWrapper(name = "suppliersContacts")
+    @XmlElement(name = "supplierContact")
+    public List<SupplierContact> getSuppliersContacts() {
+        return suppliersContacts;
     }
 
-    public void setSupplierContacts(List<SupplierContact> supplierContacts) {
-        this.supplierContacts = supplierContacts;
+    public void setSuppliersContacts(List<SupplierContact> suppliersContacts) {
+        this.suppliersContacts = suppliersContacts;
     }
 
     @Override
@@ -57,9 +73,9 @@ public class ToyShop {
         return "ToyShop{" +
                 "toys=" + toys +
                 ", employees=" + employees +
-                ", employeeContacts=" + employeeContacts +
-                ", orderDates=" + orderDates +
-                ", supplierContacts=" + supplierContacts +
+                ", employeeContacts=" + employeesContacts +
+                ", orderDates=" + ordersDates +
+                ", supplierContacts=" + suppliersContacts +
                 '}';
     }
 }
