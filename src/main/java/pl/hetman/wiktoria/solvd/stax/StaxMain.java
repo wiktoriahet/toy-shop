@@ -1,7 +1,5 @@
 package pl.hetman.wiktoria.solvd.stax;
 
-import pl.hetman.wiktoria.solvd.parser.ToyShopStaxParser;
-
 import javax.xml.stream.XMLStreamException;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;

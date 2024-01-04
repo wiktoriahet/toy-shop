@@ -1,4 +1,4 @@
-package pl.hetman.wiktoria.solvd.parser;
+package pl.hetman.wiktoria.solvd.stax;
 
 import javax.xml.XMLConstants;
 import javax.xml.stream.XMLInputFactory;
