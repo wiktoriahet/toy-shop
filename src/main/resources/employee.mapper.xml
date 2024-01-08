@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.EmployeeRepository">
+
+    <sql id="selectToyShop">
+        SELECT * FROM
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO toy_shop_fixed.employees (name) VALUES(#{name})
+    </insert>
+    <select id="findById" resultMap="EmployeeResultMap">
+        <include refid="selectToyShop"/>
+        toy_shop_fixed.employees WHERE id = #{id}
+    </select>
+    <update id="updateById">
+        UPDATE toy_shop_fixed.employees SET name = #{employee.name} WHERE id = #{id}
+    </update>
+    <delete id="deleteById">
+        DELETE FROM toy_shop_fixed.employees WHERE id = #{id}
+    </delete>
+    <resultMap id="EmployeeResultMap" type="pl.hetman.wiktoria.solvd.model.Employee" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+</mapper>

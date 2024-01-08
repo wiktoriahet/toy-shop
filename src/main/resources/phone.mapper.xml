@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.PhoneRepository">
+
+    <sql id="selectToyShop">
+        SELECT * FROM
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO toy_shop_fixed.phones (name) VALUES(#{phone})
+    </insert>
+    <select id="findById" resultMap="PhoneResultMap">
+        <include refid="selectToyShop"/>
+        toy_shop_fixed.phones WHERE id = #{id}
+    </select>
+    <update id="updateById">
+        UPDATE toy_shop_fixed.phones SET name = #{phone.phone} WHERE id = #{id}
+    </update>
+    <delete id="deleteById">
+        DELETE FROM toy_shop_fixed.phones WHERE id = #{id}
+    </delete>
+    <resultMap id="PhoneResultMap" type="pl.hetman.wiktoria.solvd.model.Phone" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="name" property="phone"/>
+    </resultMap>
+</mapper>

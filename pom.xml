@@ -11,13 +11,17 @@
 
     <properties>
         <log4jVersion>2.21.1</log4jVersion>
+        <myBatisVersion>3.5.15</myBatisVersion>
+        <jUnitVersion>5.9.1</jUnitVersion>
+        <mySqlVersion>8.2.0</mySqlVersion>
+        <mavenCompilerVersion>3.11.0</mavenCompilerVersion>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.1</version>
+            <version>${jUnitVersion}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -33,7 +37,12 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.2.0</version>
+            <version>${mySqlVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${myBatisVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
@@ -72,7 +81,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>${mavenCompilerVersion}</version>
                 <configuration>
                     <source>17</source>
                     <target>17</target>

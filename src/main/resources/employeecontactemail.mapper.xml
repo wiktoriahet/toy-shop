@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.EmployeeEmailRepository">
+
+    <sql id="selectToyShop">
+        SELECT * FROM
+    </sql>
+    <insert id="addEmail" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO toy_shop_fixed.employees_contacts_emails (employee_id, email_id) VALUES(#{employee.id}, #{email.id})
+    </insert>
+    <select id="findById" resultMap="EmployeeContactEmailResultMap">
+        <include refid="selectToyShop"/>
+        toy_shop_fixed.employees_contacts_emails WHERE id = #{id}
+    </select>
+    <delete id="deleteById">
+        DELETE FROM toy_shop_fixed.employees_contacts_emails WHERE id = #{id}
+    </delete>
+    <resultMap id="EmployeeContactEmailResultMap" type="pl.hetman.wiktoria.solvd.model.EmployeeContactEmail" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="employee_id" property="employeeId"/>
+        <collection property="emails" column="email_id"
+                    resultMap="EmailResultMap"/>
+    </resultMap>
+    <resultMap id="EmailResultMap" type="pl.hetman.wiktoria.solvd.model.Email" autoMapping="false">
+        <id property="id" column="id"/>
+        <result property ="email" column="name"/>
+    </resultMap>
+</mapper>

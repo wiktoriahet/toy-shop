@@ -2,12 +2,11 @@ package pl.hetman.wiktoria.solvd.persistence.impl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pl.hetman.wiktoria.solvd.exceptions.ToyShopException;
 import pl.hetman.wiktoria.solvd.model.Toy;
 
 import java.util.Optional;
 
-class ToyRepositoryTest {
+class ToyRepositoryImplTest {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
@@ -15,12 +14,12 @@ class ToyRepositoryTest {
     @Test
     void createToyWithName() {
         //given
-        ToyRepository toyRepository = new ToyRepository();
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();
         toy.setName("Lego Minecraft");
 
         //when
-        Optional<Toy> toyOptional = toyRepository.create(toy);
+        Optional<Toy> toyOptional = toyRepositoryImpl.create(toy);
         Toy toyOptionalUnpacked = toyOptional.orElse(null);
 
         //then
@@ -33,27 +32,25 @@ class ToyRepositoryTest {
     @Test
     void createToyWithoutName() {
         //given
-        ToyRepository toyRepository = new ToyRepository();
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();
 
         //when
-        Optional<Toy> toyOptional = toyRepository.create(toy);
-        Toy toyOptionalUnpacked = toyOptional.orElse(null);
 
         //then
         Assertions.assertThrows(
-                ToyShopException.class,
-                () -> toyRepository.create(toy)
+                RuntimeException.class,
+                () -> toyRepositoryImpl.create(toy)
         );
     }
 
     @Test
     void checkFindById() {
         //given
-        ToyRepository toyRepository = new ToyRepository();
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
 
         //when
-        Toy foundToy = toyRepository.findById(3L).orElse(null);
+        Toy foundToy = toyRepositoryImpl.findById(10L).orElse(null);
 
         //then
         Assertions.assertNotNull(foundToy, "foundToy is empty");
@@ -63,17 +60,17 @@ class ToyRepositoryTest {
     @Test
     void checkUpdateById(){
         //given
-        ToyRepository toyRepository = new ToyRepository();
-        Toy beforeUpdateToy = toyRepository.findById(3L).orElse(null);
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
+        Toy beforeUpdateToy = toyRepositoryImpl.findById(10L).orElse(null);
         String nameBeforeUpdate = beforeUpdateToy.getName();
 
         Toy toy = new Toy();
-        toy.setId(3L);
+        toy.setId(10L);
         toy.setName("Barbie");
 
         //when
-        toyRepository.updateById(3L, toy);
-        Optional<Toy> updatedToyOptional = toyRepository.findById(3L);
+        toyRepositoryImpl.updateById(10L, toy);
+        Optional<Toy> updatedToyOptional = toyRepositoryImpl.findById(10L);
         Toy updatedToy = updatedToyOptional.orElse(null);
 
         //then
@@ -84,12 +81,12 @@ class ToyRepositoryTest {
     @Test
     void checkDeleteById(){
         //given
-        ToyRepository toyRepository = new ToyRepository();
-        Toy beforeDeleteToy = toyRepository.findById(3L).orElse(null);
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
+        Toy beforeDeleteToy = toyRepositoryImpl.findById(4L).orElse(null);
 
         //when
-        toyRepository.deleteById(3L);
-        Toy afterDeleteToy = toyRepository.findById(3L).orElse(null);
+        toyRepositoryImpl.deleteById(4L);
+        Toy afterDeleteToy = toyRepositoryImpl.findById(4L).orElse(null);
 
         //then
         Assertions.assertNull(afterDeleteToy, "afterDeleteToy is not null");
@@ -99,7 +96,7 @@ class ToyRepositoryTest {
     @Test
     void createAlreadyExist() {
         //given
-        ToyRepository toyRepository = new ToyRepository();
+        ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();
         toy.setId(1L);
         toy.setName("Lego Minecraft");
@@ -109,7 +106,7 @@ class ToyRepositoryTest {
         //then
         Assertions.assertThrows(
                 RuntimeException.class,
-                () -> toyRepository.create(toy)
+                () -> toyRepositoryImpl.create(toy)
         );
     }
 }
