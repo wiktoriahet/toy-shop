@@ -22,7 +22,7 @@
         DELETE FROM toy_shop_fixed.emails WHERE id = #{id}
     </delete>
     <resultMap id="EmailResultMap" type="pl.hetman.wiktoria.solvd.model.Email" autoMapping="false">
-        <id column="id" property="id"/>
-        <result column="email" property="name"/>
+        <id column="email_id" property="id"/>
+        <result column="name" property="email"/>
     </resultMap>
 </mapper>
