@@ -29,8 +29,4 @@
             <result property="email" column="name" />
         </collection>
     </resultMap>
-<!--    <resultMap id="EmailResultMap" type="pl.hetman.wiktoria.solvd.model.Email" autoMapping="false">-->
-<!--        <id property="id" column="email_id"/>-->
-<!--        <result property="email" column="email"/>-->
-<!--    </resultMap>-->
 </mapper>
