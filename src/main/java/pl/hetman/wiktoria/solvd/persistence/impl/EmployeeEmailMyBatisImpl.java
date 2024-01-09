@@ -34,8 +34,7 @@ public class EmployeeEmailMyBatisImpl implements EmployeeEmailRepository {
 
             LOGGER.debug("Executing SQL Query: SELECT * FROM toy_shop_fixed.employees_contacts_emails ece JOIN toy_shop_fixed.emails e ON ece.email_id = e.id WHERE ece.id = {}", id);
 
-
-            EmployeeContactEmail employeeContactEmail = employeeEmailRepository.findById(10L).orElseThrow(
+            EmployeeContactEmail employeeContactEmail = employeeEmailRepository.findById(id).orElseThrow(
                     () -> new RuntimeException("Can't find EmployeeContact in db")
             );
 
