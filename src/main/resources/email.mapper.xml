@@ -23,6 +23,6 @@
     </delete>
     <resultMap id="EmailResultMap" type="pl.hetman.wiktoria.solvd.model.Email" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="name" property="email"/>
+        <result column="email" property="name"/>
     </resultMap>
 </mapper>
