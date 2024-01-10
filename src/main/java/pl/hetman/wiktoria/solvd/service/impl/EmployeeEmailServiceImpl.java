@@ -28,8 +28,8 @@ public class EmployeeEmailServiceImpl implements EmployeeEmailService {
     }
 
     @Override
-    public Optional<EmployeeContactEmail> findById(Long id) throws ToyShopException{
-        if(id==null){
+    public Optional<EmployeeContactEmail> findById(Long id) throws ToyShopException {
+        if (id == null) {
             throw new ToyShopException("Can't find EmployeeContactEmail, id is null ");
         } else {
             Optional<EmployeeContactEmail> foundedEmployeeContactEmail = employeeEmailRepo.findById(id);

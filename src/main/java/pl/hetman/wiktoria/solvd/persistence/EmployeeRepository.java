@@ -7,7 +7,8 @@ import pl.hetman.wiktoria.solvd.model.Toy;
 import java.util.Optional;
 
 public interface EmployeeRepository {
-    Optional<Toy> create(Employee employee);
+
+    Integer create(Employee employee);
 
     Optional<Toy> findById(Long id);
 

@@ -29,15 +29,15 @@ public class ToyRepositoryImpl implements Repository<Toy> {
         try (Connection connection = ConnectionPool.getInstance().take().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_TOY_QUERY);
         ) {
-            if(toy.getId()!=null){
+            if (toy.getId() != null) {
                 Toy foundedToy = findById(toy.getId()).orElse(null);
-                if(foundedToy != null){
+                if (foundedToy != null) {
                     throw new ToyShopException("Can't create a toy. Toy already exists.");
                 }
             } else if (toy == null) {
                 LOGGER.warn("ToyShopException");
                 throw new ToyShopException("Can't create a toy. Object is empty.");
-            } else if (toy.getName()==null) {
+            } else if (toy.getName() == null) {
                 LOGGER.warn("ToyShopException");
                 throw new ToyShopException("Can't create a toy. Toy's name is null.");
             } else {

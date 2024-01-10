@@ -11,7 +11,7 @@ import java.util.Optional;
 class ToyServiceTest {
 
     @Test
-    void checkCreate() throws ToyShopException {
+    void validateCreateWithValidData() throws ToyShopException {
         //given
         ToyRepositoryMyBatisImpl toyRepositoryImpl = new ToyRepositoryMyBatisImpl();
         ToyService toyService = new ToyService(toyRepositoryImpl);
@@ -29,7 +29,7 @@ class ToyServiceTest {
     }
 
     @Test
-    void checkCreateWithoutName() throws ToyShopException {
+    void validateCreateWithoutName() throws ToyShopException {
         //given
         ToyRepositoryMyBatisImpl toyRepositoryImpl = new ToyRepositoryMyBatisImpl();
         ToyService toyService = new ToyService(toyRepositoryImpl);
@@ -45,7 +45,7 @@ class ToyServiceTest {
     }
 
     @Test
-    void checkFindById() throws ToyShopException{
+    void validateFindByIdWithValidData() throws ToyShopException{
         //given
         ToyRepositoryMyBatisImpl toyRepositoryImpl = new ToyRepositoryMyBatisImpl();
         ToyService toyService = new ToyService(toyRepositoryImpl);
@@ -58,7 +58,7 @@ class ToyServiceTest {
     }
 
     @Test
-    void checkUpdateById() throws ToyShopException{
+    void validateUpdateByIdWithValidData() throws ToyShopException{
         //given
         ToyRepositoryMyBatisImpl toyRepositoryImpl = new ToyRepositoryMyBatisImpl();
         ToyService toyService = new ToyService(toyRepositoryImpl);
@@ -79,7 +79,7 @@ class ToyServiceTest {
     }
 
     @Test
-    void checkDeleteById() throws ToyShopException{
+    void validateDeleteByIdWithValidData() throws ToyShopException{
         //given
         ToyRepositoryMyBatisImpl toyRepositoryImpl = new ToyRepositoryMyBatisImpl();
         ToyService toyService = new ToyService(toyRepositoryImpl);

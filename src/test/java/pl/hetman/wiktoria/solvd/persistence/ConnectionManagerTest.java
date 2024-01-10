@@ -13,13 +13,13 @@ class ConnectionManagerTest {
     }
 
     @Test
-    void checkingConnection() throws ToyShopException {
+    void validateConnectionIsNotNull() throws ToyShopException {
         Connection connection = ConnectionManager.getInstance().getConnection();
         Assertions.assertNotNull(connection, "Connection is null");
     }
 
     @Test
-    void checkingConnectionWithPool() throws ToyShopException, InterruptedException {
+    void validateConnectionWithPool() throws ToyShopException, InterruptedException {
         //given
         BlockingQueue<ConnectionManager> instance = ConnectionPool.getInstance();
 

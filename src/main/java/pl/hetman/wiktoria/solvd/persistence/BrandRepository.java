@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface BrandRepository {
 
-    Optional<Toy> create(Toy toy);
+    Integer create(Toy toy);
 
     Optional<Toy> findById(Long id);
 

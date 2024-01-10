@@ -7,7 +7,7 @@ import pl.hetman.wiktoria.solvd.model.Brand;
 class BrandRepositoryImplTest {
 
     @Test
-    void checkFindById() {
+    void validateFindById() {
         //given
         BrandRepositoryImpl brandRepositoryImpl = new BrandRepositoryImpl();
 

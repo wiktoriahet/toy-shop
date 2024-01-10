@@ -8,11 +8,11 @@ import java.util.Optional;
 
 public interface PhoneRepository {
 
-    Optional<Toy> create(Phone phone);
+    Integer create(Phone phone);
 
     Optional<Toy> findById(Long id);
 
-    void updateById(@Param("id") Long id, @Param("phone")Phone phone);
+    void updateById(@Param("id") Long id, @Param("phone") Phone phone);
 
     void deleteById(Long id);
 }

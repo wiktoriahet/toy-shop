@@ -10,8 +10,8 @@ import java.util.Optional;
 public class ToyBrandRepositoryImpl implements ToyBrandRepository {
 
     @Override
-    public Optional<ToyBrand> create(Toy toy, Brand brand) {
-        return Optional.empty();
+    public Integer create(Toy toy, Brand brand) {
+        return null;
     }
 
     @Override

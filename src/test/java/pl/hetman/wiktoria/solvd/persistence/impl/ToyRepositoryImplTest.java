@@ -12,7 +12,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void createToyWithName() {
+    void validateCreateToyWithValidData() {
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();
@@ -30,7 +30,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void createToyWithoutName() {
+    void validateCreateToyWithoutName() {
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();
@@ -45,7 +45,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void checkFindById() {
+    void validateFindById() {
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
 
@@ -58,7 +58,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void checkUpdateById(){
+    void validateUpdateById(){
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy beforeUpdateToy = toyRepositoryImpl.findById(10L).orElse(null);
@@ -79,7 +79,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void checkDeleteById(){
+    void validateDeleteById(){
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy beforeDeleteToy = toyRepositoryImpl.findById(4L).orElse(null);
@@ -94,7 +94,7 @@ class ToyRepositoryImplTest {
     }
 
     @Test
-    void createAlreadyExist() {
+    void validateCreateWhenAlreadyExist() {
         //given
         ToyRepositoryImpl toyRepositoryImpl = new ToyRepositoryImpl();
         Toy toy = new Toy();

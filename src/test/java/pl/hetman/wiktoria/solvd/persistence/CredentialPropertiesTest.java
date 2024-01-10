@@ -9,14 +9,12 @@ public class CredentialPropertiesTest {
     }
 
     @Test
-    void getProperty() {
+    void validateGetProperty() {
         //given
         CredentialsProperties credentialsProperties = new CredentialsProperties();
 
         //when
         String property = credentialsProperties.getProperty("database");
-        String string = property.toString();
-        System.out.println(string);
 
         //then
         Assertions.assertNotNull(property, "property is null");

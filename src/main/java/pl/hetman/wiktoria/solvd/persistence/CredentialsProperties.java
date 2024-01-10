@@ -11,7 +11,7 @@ public class CredentialsProperties {
     private static final Logger LOGGER = LogManager.getLogger(CredentialsProperties.class);
 
     public String getProperty(String key) {
-        LOGGER.info("getProperty("+ key +")");
+        LOGGER.info("getProperty(" + key + ")");
         Properties properties = new Properties();
         InputStream inputStream = Thread.currentThread()
                 .getContextClassLoader()

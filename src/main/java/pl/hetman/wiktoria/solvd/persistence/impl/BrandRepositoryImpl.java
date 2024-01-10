@@ -29,12 +29,12 @@ public class BrandRepositoryImpl implements Repository<Brand> {
         try (Connection connection = ConnectionPool.getInstance().take().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_BRAND_QUERY);
         ) {
-            if(brand.getId()!=null){
-            Brand foundedBrand = findById(brand.getId()).orElse(null);
-            if(foundedBrand != null){
-                throw new ToyShopException("Can't create a brand. Brand already exists.");
-            }
-        } else if (brand == null) {
+            if (brand.getId() != null) {
+                Brand foundedBrand = findById(brand.getId()).orElse(null);
+                if (foundedBrand != null) {
+                    throw new ToyShopException("Can't create a brand. Brand already exists.");
+                }
+            } else if (brand == null) {
                 LOGGER.warn("ToyShopException");
                 throw new ToyShopException("Can't create a brand. Object is empty.");
             } else if (brand.getName().equals(null)) {
