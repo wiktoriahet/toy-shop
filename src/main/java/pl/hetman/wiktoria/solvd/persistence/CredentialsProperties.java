@@ -10,23 +10,37 @@ import java.util.Properties;
 public class CredentialsProperties {
     private static final Logger LOGGER = LogManager.getLogger(CredentialsProperties.class);
 
+    private Properties properties;
+
+    public CredentialsProperties() {
+        LOGGER.info("CredentialsProperties()");
+        loadProperties();
+        LOGGER.info("CredentialsProperties(...)");
+    }
+
+    private void loadProperties() {
+        properties = new Properties();
+        try (
+                InputStream inputStream = Thread
+                        .currentThread()
+                        .getContextClassLoader()
+                        .getResourceAsStream("credentials.properties")
+        ) {
+            if (inputStream != null) {
+                properties.load(inputStream);
+            } else {
+                LOGGER.error("Could not find credentials.properties file");
+            }
+        } catch (IOException e) {
+            LOGGER.error("Error loading properties", e);
+        }
+    }
+
     public String getProperty(String key) {
         LOGGER.info("getProperty(" + key + ")");
-        Properties properties = new Properties();
-        InputStream inputStream = Thread.currentThread()
-                .getContextClassLoader()
-                .getResourceAsStream("credentials.properties");
-
-        try {
-            properties.load(inputStream);
-            String property = properties.getProperty(key);
-            LOGGER.info("getProperty(...)");
-            return property;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        LOGGER.info("getProperty(...)");
-        return null;
+        String property = properties.getProperty(key);
+        LOGGER.info("getProperty(" + key + ") = " + property + ")");
+        return property;
     }
 
 }
