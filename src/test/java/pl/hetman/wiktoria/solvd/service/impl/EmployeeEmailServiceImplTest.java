@@ -15,6 +15,7 @@ class EmployeeEmailServiceImplTest {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
+
     @Test
     void validateFindById() throws ToyShopException {
         //given
@@ -23,11 +24,13 @@ class EmployeeEmailServiceImplTest {
 
         //when
         Optional<EmployeeContactEmail> foundedEmployeeEmail = employeeEmailService.findById(10L);
-        List<Email> emails = foundedEmployeeEmail.orElse(null).getEmails();
-        System.out.println(foundedEmployeeEmail);
+        List<Email> emails = foundedEmployeeEmail.orElse(null) != null ? foundedEmployeeEmail.get().getEmails() : null;
 
         //then
-        Assertions.assertNotNull(foundedEmployeeEmail, "foundedEmployeeEmail is null");
+        Assertions.assertAll(
+                () -> Assertions.assertNotNull(foundedEmployeeEmail, "foundedEmployeeEmail is null"),
+                () -> Assertions.assertNotNull(emails, "Emails list is null")
+        );
 
     }
 }

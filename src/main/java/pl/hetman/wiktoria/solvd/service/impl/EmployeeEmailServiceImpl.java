@@ -39,6 +39,12 @@ public class EmployeeEmailServiceImpl implements EmployeeEmailService {
 
     @Override
     public void deleteById(Long id) {
-
+/**
+ * Deletes an EmployeeContactEmail by ID.
+ *
+ * TODO: Implement this method.
+ *
+ * @param id The ID of the EmployeeContactEmail to be deleted.
+ */
     }
 }
