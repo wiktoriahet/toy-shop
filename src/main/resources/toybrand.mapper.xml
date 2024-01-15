@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.ToyBrandRepository">
+
+    <sql id="selectToyShop">
+        SELECT * FROM
+    </sql>
+
+    <sql id="updateToysBrands">
+        UPDATE toy_shop_fixed.toys_brands SET
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO toy_shop_fixed.toys_brands (toy_id, brand_id) VALUES(#{toy.id}, #{brand.id})
+    </insert>
+    <select id="findById" resultMap="ToyBrandResultMap">
+        <include refid="selectToyShop"/>
+        toy_shop_fixed.toys_brands WHERE id = #{id}
+    </select>
+    <update id="updateToyById">
+        <include refid="updateToysBrands"/>
+        toy_id = #{toy.id} WHERE id = #{id}
+    </update>
+    <update id="updateBrandById">
+        <include refid="updateToysBrands"/>
+        brand_id = #{brand.id} WHERE id = #{id}
+    </update>
+    <delete id="deleteById">
+        DELETE FROM toy_shop_fixed.toys_brands WHERE id = #{id}
+    </delete>
+    <resultMap id="ToyBrandResultMap" type="pl.hetman.wiktoria.solvd.model.ToyBrand" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="toy_id" property="toyId"/>
+        <result column="brand_id" property="brandId"/>
+    </resultMap>
+</mapper>

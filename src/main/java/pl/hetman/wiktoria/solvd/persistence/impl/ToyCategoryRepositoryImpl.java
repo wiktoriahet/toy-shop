@@ -5,7 +5,7 @@ import pl.hetman.wiktoria.solvd.persistence.Repository;
 
 import java.util.Optional;
 
-public class ToyCategoryRepository implements Repository<ToyCategory> {
+public class ToyCategoryRepositoryImpl implements Repository<ToyCategory> {
     @Override
     public Optional<ToyCategory> create(ToyCategory toyCategory) {
         return Optional.empty();

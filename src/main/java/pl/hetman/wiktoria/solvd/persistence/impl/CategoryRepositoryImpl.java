@@ -1,23 +1,23 @@
 package pl.hetman.wiktoria.solvd.persistence.impl;
 
-import pl.hetman.wiktoria.solvd.model.ToyBrand;
+import pl.hetman.wiktoria.solvd.model.Category;
 import pl.hetman.wiktoria.solvd.persistence.Repository;
 
 import java.util.Optional;
 
-public class ToyBrandRepository implements Repository<ToyBrand> {
+public class CategoryRepositoryImpl implements Repository<Category> {
     @Override
-    public Optional<ToyBrand> create(ToyBrand toyBrand) {
+    public Optional<Category> create(Category category) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<ToyBrand> findById(Long id) {
+    public Optional<Category> findById(Long id) {
         return Optional.empty();
     }
 
     @Override
-    public void updateById(Long id, ToyBrand toyBrand) {
+    public void updateById(Long id, Category category) {
 
     }
 

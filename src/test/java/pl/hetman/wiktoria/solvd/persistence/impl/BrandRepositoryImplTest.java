@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pl.hetman.wiktoria.solvd.model.Brand;
 
-class BrandRepositoryTest {
+class BrandRepositoryImplTest {
 
     @Test
     void checkFindById() {
         //given
-        BrandRepository brandRepository = new BrandRepository();
+        BrandRepositoryImpl brandRepositoryImpl = new BrandRepositoryImpl();
 
         //when
-        Brand foundBrand = brandRepository.findById(3L).orElse(null);
+        Brand foundBrand = brandRepositoryImpl.findById(3L).orElse(null);
 
         //then
         Assertions.assertNotNull(foundBrand, "foundToy is empty");
