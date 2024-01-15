@@ -16,7 +16,7 @@ class EmployeeEmailServiceImplTest {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
     @Test
-    void checkFindById() throws ToyShopException {
+    void validateFindById() throws ToyShopException {
         //given
         EmployeeEmailMyBatisImpl employeeEmailRepo = new EmployeeEmailMyBatisImpl();
         EmployeeEmailServiceImpl employeeEmailService = new EmployeeEmailServiceImpl(employeeEmailRepo);

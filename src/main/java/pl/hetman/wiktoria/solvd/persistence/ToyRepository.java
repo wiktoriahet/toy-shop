@@ -8,11 +8,11 @@ import java.util.Optional;
 
 public interface ToyRepository {
 
-    Optional<Toy> create(Toy toy) throws ToyShopException;
+    Integer create(Toy toy) throws ToyShopException;
 
     Optional<Toy> findById(Long id) throws ToyShopException;
 
-    void updateById(@Param("id") Long id, @Param("toy") Toy toy)throws ToyShopException;
+    void updateById(@Param("id") Long id, @Param("toy") Toy toy) throws ToyShopException;
 
-    void deleteById(Long id)throws ToyShopException;
+    void deleteById(Long id) throws ToyShopException;
 }

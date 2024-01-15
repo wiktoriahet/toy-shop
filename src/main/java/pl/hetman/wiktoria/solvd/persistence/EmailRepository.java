@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface EmailRepository {
 
-    Optional<Toy> create(Email email);
+    Integer create(Email email);
 
     Optional<Toy> findById(Long id);
 

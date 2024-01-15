@@ -7,9 +7,9 @@ import pl.hetman.wiktoria.solvd.model.ToyBrand;
 
 import java.util.Optional;
 
-public interface ToyBrandRepository{
+public interface ToyBrandRepository {
 
-    Optional<ToyBrand> create(@Param("id") Toy toy, @Param("id") Brand brand);
+    Integer create(@Param("id") Toy toy, @Param("id") Brand brand);
 
     Optional<ToyBrand> findById(Long id);
 
