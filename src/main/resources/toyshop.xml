@@ -1,0 +1,110 @@
+<ToyShop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <toys>
+        <toy id="1">
+            <name>Lego Minecraft</name>
+        </toy>
+        <toy id="2">
+            <name>Barbie Actress</name>
+        </toy>
+        <toy id="3">
+            <name>Dinosaur Plushie</name>
+        </toy>
+    </toys>
+    <employees>
+        <employee id="1">
+            <name>John Doe</name>
+        </employee>
+        <employee id="2">
+            <name>Jim Jam</name>
+        </employee>
+        <employee id="3">
+            <name>Bob Bab</name>
+        </employee>
+    </employees>
+    <employeesContacts>
+        <employeeContact id="1">
+            <employeeId>1</employeeId>
+            <emails>
+                <email id="3">johndoe1@mail.com</email>
+                <email id="4">johndoe2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="1">485485485</phone>
+                <phone id="2">584584584</phone>
+            </phones>
+        </employeeContact>
+        <employeeContact id="2">
+            <employeeId>2</employeeId>
+            <emails>
+                <email id="5">jimjam1@mail.com</email>
+                <email id="6">jimjam2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="3">963963963</phone>
+                <phone id="4">369369369</phone>
+            </phones>
+        </employeeContact>
+        <employeeContact id="3">
+            <employeeId>3</employeeId>
+            <emails>
+                <email id="1">bobbab1@mail.com</email>
+                <email id="2">bobbab2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="5">852852852</phone>
+                <phone id="6">258258258</phone>
+            </phones>
+        </employeeContact>
+    </employeesContacts>
+    <ordersDates>
+        <orderDate id="1">
+            <orderId>1</orderId>
+            <date>1986-04-08 12:30:00</date>
+        </orderDate>
+        <orderDate id="2">
+            <orderId>2</orderId>
+            <date>1987-04-08 12:30:00</date>
+        </orderDate>
+        <orderDate id="3">
+            <orderId>3</orderId>
+            <date>1988-04-08 12:30:00</date>
+        </orderDate>
+    </ordersDates>
+    <suppliersContacts>
+        <supplierContact id="1">
+            <supplierId>1</supplierId>
+            <emails>
+                <email id="11">sup1@mail.com</email>
+                <email id="22">sup2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="11">842684268</phone>
+                <phone id="22">896547896</phone>
+            </phones>
+        </supplierContact>
+        <supplierContact id="2">
+            <supplierId>2</supplierId>
+            <emails>
+                <email id="33">supsup1@mail.com</email>
+                <email id="44">supsup2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="33">888888888</phone>
+                <phone id="44">888888887</phone>
+            </phones>
+        </supplierContact>
+        <supplierContact id="3">
+            <supplierIdId>3</supplierIdId>
+            <emails>
+                <email id="55">supsupsup1@mail.com</email>
+                <email id="66">supsupsup2@mail.com</email>
+            </emails>
+            <phones>
+                <phone id="55">999666333</phone>
+                <phone id="66">333666555</phone>
+            </phones>
+        </supplierContact>
+    </suppliersContacts>
+
+</ToyShop>

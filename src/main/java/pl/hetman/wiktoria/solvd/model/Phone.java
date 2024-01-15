@@ -1,6 +1,9 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+
 public class Phone {
+
     private Long id;
     private Long phone;
 
@@ -12,6 +15,7 @@ public class Phone {
         this.phone = phone;
     }
 
+    @XmlAttribute(name = "id")
     public Long getId() {
         return id;
     }

@@ -1,9 +1,14 @@
 package pl.hetman.wiktoria.solvd.model;
 
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+
 import java.util.List;
 
 public class SupplierContact {
+
     private Long id;
     private Long supplierId;
     private List<Email> emails;
@@ -19,6 +24,7 @@ public class SupplierContact {
         this.phones = phones;
     }
 
+    @XmlAttribute(name = "id")
     public Long getId() {
         return id;
     }
@@ -35,6 +41,8 @@ public class SupplierContact {
         this.supplierId = supplierId;
     }
 
+    @XmlElementWrapper(name = "emails")
+    @XmlElement(name = "email")
     public List<Email> getEmails() {
         return emails;
     }
@@ -43,6 +51,8 @@ public class SupplierContact {
         this.emails = emails;
     }
 
+    @XmlElementWrapper(name = "phones")
+    @XmlElement(name = "phone")
     public List<Phone> getPhones() {
         return phones;
     }

@@ -1,6 +1,9 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+
 public class Email {
+
     private Long id;
     private String email;
 
@@ -12,6 +15,7 @@ public class Email {
         this.email = email;
     }
 
+    @XmlAttribute(name = "id")
     public Long getId() {
         return id;
     }
