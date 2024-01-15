@@ -18,6 +18,16 @@ public class ToyShop {
     public ToyShop() {
     }
 
+    public void printToyShopInfo() {
+
+        System.out.println("Toys: " + toys);
+        System.out.println("Employees: " + employees);
+        System.out.println("EmployeesContacts: " + employeesContacts);
+        System.out.println("OrdersDates: " + ordersDates);
+        System.out.println("SuppliersContacts: " + suppliersContacts);
+
+    }
+
     @XmlElementWrapper(name = "toys")
     @XmlElement(name = "toy")
     public List<Toy> getToys() {

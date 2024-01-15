@@ -1,8 +1,6 @@
 package pl.hetman.wiktoria.solvd.jaxb;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
+import pl.hetman.wiktoria.solvd.exceptions.FileException;
 import pl.hetman.wiktoria.solvd.model.ToyShop;
 
 import java.io.File;
@@ -12,18 +10,13 @@ public class JaxbMain {
 
         File fileName = new File("src/main/resources/toyshop.xml");
 
+        JaxbParser jaxbParser = new JaxbParser();
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(ToyShop.class);
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            ToyShop toyShop = (ToyShop) unmarshaller.unmarshal(fileName);
-            System.out.println(toyShop.getToys());
-            System.out.println(toyShop.getOrdersDates());
-            System.out.println(toyShop.getEmployees());
-            System.out.println(toyShop.getEmployeesContacts());
-        } catch (JAXBException e) {
+            ToyShop parsedToyShop = jaxbParser.parse(fileName);
+            parsedToyShop.printToyShopInfo();
+        } catch (FileException e) {
             throw new RuntimeException(e);
         }
-
 
     }
 }

@@ -8,15 +8,16 @@ public class StaxMain {
 
     public static void main(String[] args) {
 
+        StaxToyShopHandler staxHandler = new StaxToyShopHandler();
+        ToyShopStaxParser toyShopStaxParser = new ToyShopStaxParser(staxHandler);
+
         String fileName = "src/main/resources/toyshop.xml";
 
-        ToyShopStaxParser toyShopStaxParser = new ToyShopStaxParser();
+
         try {
             toyShopStaxParser.printXmlByXmlCursorReader(Paths.get(fileName));
         } catch (FileNotFoundException | XMLStreamException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 }
