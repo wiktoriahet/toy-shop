@@ -14,6 +14,7 @@ public class ToyShopJsonParser {
     private static final Logger LOGGER = LogManager.getLogger(ToyShopJsonParser.class);
 
     void parse(File file, ObjectMapper mapper, Class<ToyShop> toyShopClass) {
+        LOGGER.info("parse(" + file + ", " + toyShopClass.getName() + ")");
         mapper.registerModule(new JavaTimeModule());
 
         try {
@@ -22,6 +23,7 @@ public class ToyShopJsonParser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        LOGGER.info("parse(...)");
     }
 
 }
