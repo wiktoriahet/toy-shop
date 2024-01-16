@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import pl.hetman.wiktoria.solvd.exceptions.ToyShopException;
 import pl.hetman.wiktoria.solvd.model.Email;
 import pl.hetman.wiktoria.solvd.model.EmployeeContactEmail;
-import pl.hetman.wiktoria.solvd.persistence.impl.EmployeeEmailMyBatisImpl;
+import pl.hetman.wiktoria.solvd.persistence.impl.EmployeeEmailRepoMyBatisImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +19,7 @@ class EmployeeEmailServiceImplTest {
     @Test
     void validateFindById() throws ToyShopException {
         //given
-        EmployeeEmailMyBatisImpl employeeEmailRepo = new EmployeeEmailMyBatisImpl();
+        EmployeeEmailRepoMyBatisImpl employeeEmailRepo = new EmployeeEmailRepoMyBatisImpl();
         EmployeeEmailServiceImpl employeeEmailService = new EmployeeEmailServiceImpl(employeeEmailRepo);
 
         //when

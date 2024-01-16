@@ -12,9 +12,9 @@ import pl.hetman.wiktoria.solvd.persistence.PersistenceConfig;
 
 import java.util.Optional;
 
-public class EmployeeEmailMyBatisImpl implements EmployeeEmailRepository {
+public class EmployeeEmailRepoMyBatisImpl implements EmployeeEmailRepository {
 
-    private static final Logger LOGGER = LogManager.getLogger(EmployeeEmailMyBatisImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(EmployeeEmailRepoMyBatisImpl.class);
 
     @Override
     public Integer addEmail(Employee employee, Email email) {

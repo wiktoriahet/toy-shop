@@ -6,7 +6,7 @@ import pl.hetman.wiktoria.solvd.exceptions.ToyShopException;
 import pl.hetman.wiktoria.solvd.model.Email;
 import pl.hetman.wiktoria.solvd.model.Employee;
 import pl.hetman.wiktoria.solvd.model.EmployeeContactEmail;
-import pl.hetman.wiktoria.solvd.persistence.impl.EmployeeEmailMyBatisImpl;
+import pl.hetman.wiktoria.solvd.persistence.impl.EmployeeEmailRepoMyBatisImpl;
 import pl.hetman.wiktoria.solvd.service.EmployeeEmailService;
 
 import java.util.Optional;
@@ -15,9 +15,9 @@ public class EmployeeEmailServiceImpl implements EmployeeEmailService {
 
     private static final Logger LOGGER = LogManager.getLogger(EmployeeEmailServiceImpl.class);
 
-    private final EmployeeEmailMyBatisImpl employeeEmailRepo;
+    private final EmployeeEmailRepoMyBatisImpl employeeEmailRepo;
 
-    public EmployeeEmailServiceImpl(EmployeeEmailMyBatisImpl employeeEmailRepo) {
+    public EmployeeEmailServiceImpl(EmployeeEmailRepoMyBatisImpl employeeEmailRepo) {
         this.employeeEmailRepo = employeeEmailRepo;
     }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.SupplierEmailRepository">
+
+    <select id="findById" resultMap="SupplierContactEmailResultMap">
+        SELECT * FROM
+        toy_shop_fixed.suppliers_contacts_emails sce
+        JOIN toy_shop_fixed.emails e ON sce.email_id = e.id
+        WHERE sce.id = #{id};
+
+    </select>
+    <resultMap id="SupplierContactEmailResultMap" type="pl.hetman.wiktoria.solvd.model.SupplierContactEmail"
+               autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="supplier_id" property="supplierId"/>
+        <collection property="emails"  ofType="pl.hetman.wiktoria.solvd.model.Email" resultMap="pl.hetman.wiktoria.solvd.persistence.EmailRepository.EmailResultMap">
+            <id property="id" column="email_id" />
+            <result property="email" column="name" />
+        </collection>
+    </resultMap>
+</mapper>

@@ -25,5 +25,6 @@
         <mapper resource="toy.mapper.xml"/>
         <mapper resource="toybrand.mapper.xml"/>
         <mapper resource="discount.mapper.xml"/>
+        <mapper resource="suppliercontactemail.mapper.xml"/>
     </mappers>
 </configuration>
