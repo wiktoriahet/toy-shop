@@ -1,5 +1,7 @@
 package pl.hetman.wiktoria.solvd.model;
 
+import java.util.Objects;
+
 public class Order {
     private Long id;
     private Long customerId;
@@ -34,5 +36,17 @@ public class Order {
                 "id=" + id +
                 ", customerId=" + customerId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof Order order)) return false;
+        return Objects.equals(getId(), order.getId()) && Objects.equals(getCustomerId(), order.getCustomerId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getCustomerId());
     }
 }
