@@ -22,7 +22,7 @@ class FactoryGeneratorTest {
     public static final String TOY_SUPPLIER = "TOY SUPPLIER";
 
     @Test
-    void getFactory() throws ToyShopException, ContactException, SupplyException {
+    void validateAbstractFactory() throws ToyShopException, ContactException, SupplyException {
         //given
         EmployeeEmailRepoMyBatisImpl employeeEmailRepoMyBatis = new EmployeeEmailRepoMyBatisImpl();
         SupplierEmailRepositoryImpl supplierEmailRepository = new SupplierEmailRepositoryImpl();

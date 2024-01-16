@@ -14,7 +14,7 @@ class ContactFactoryTest {
     private static final String SUPPLIER = "SUPPLIER";
 
     @Test
-    void getContact() throws ContactException {
+    void validateContactFactory() throws ContactException {
         //given
         EmployeeEmailRepoMyBatisImpl employeeEmailRepoMyBatis = new EmployeeEmailRepoMyBatisImpl();
         EmployeeEmailServiceImpl employeeEmailService = new EmployeeEmailServiceImpl(employeeEmailRepoMyBatis);

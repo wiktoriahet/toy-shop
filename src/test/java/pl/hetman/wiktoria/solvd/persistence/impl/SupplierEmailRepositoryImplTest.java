@@ -10,7 +10,7 @@ import java.util.Optional;
 class SupplierEmailRepositoryImplTest {
 
     @Test
-    void findById() throws ToyShopException {
+    void validateFindById() throws ToyShopException {
         //given
         SupplierEmailRepositoryImpl supplierEmailRepository = new SupplierEmailRepositoryImpl();
 

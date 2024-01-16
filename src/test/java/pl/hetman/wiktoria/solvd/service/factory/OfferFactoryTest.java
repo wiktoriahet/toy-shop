@@ -19,7 +19,7 @@ class OfferFactoryTest {
     private static final String FREEBIE = "FREEBIE";
 
     @Test
-    void validateGetOffer() throws OfferException, ToyShopException {
+    void validateOfferFactory() throws OfferException, ToyShopException {
         //given
         DiscountRepositoryImpl discountRepository = new DiscountRepositoryImpl();
         DiscountServiceImpl discountService = new DiscountServiceImpl(discountRepository);
