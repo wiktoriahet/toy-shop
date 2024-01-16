@@ -54,6 +54,13 @@ public class EmployeeEmailRepoMyBatisImpl implements EmployeeEmailRepository {
 
     @Override
     public void deleteById(Long id) {
-
+        LOGGER.info("deleteById(" + id + ")");
+        /**
+         * Delete employee email by id
+         *
+         * TODO: Implement this method.
+         *
+         */
+        LOGGER.info("deleteById(...)");
     }
 }
