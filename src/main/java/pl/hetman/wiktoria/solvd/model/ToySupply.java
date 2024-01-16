@@ -1,6 +1,8 @@
 package pl.hetman.wiktoria.solvd.model;
 
-public class ToySupply {
+import pl.hetman.wiktoria.solvd.service.listener.IToySupply;
+
+public class ToySupply implements IToySupply {
     private Long id;
     private Long toyId;
     private Integer quantity;
@@ -12,6 +14,11 @@ public class ToySupply {
         this.id = id;
         this.toyId = toyId;
         this.quantity = quantity;
+    }
+
+    @Override
+    public void update(Integer quantity) {
+        this.setQuantity(quantity);
     }
 
     public Long getId() {
