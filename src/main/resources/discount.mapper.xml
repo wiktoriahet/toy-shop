@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.DiscountRepository">
+
+    <sql id="selectToyShop">
+        SELECT * FROM
+    </sql>
+    <select id="findById" resultMap="DiscountResultMap">
+        <include refid="selectToyShop"/>
+        toy_shop_fixed.discounts WHERE id = #{id}
+    </select>
+    <resultMap id="DiscountResultMap" type="pl.hetman.wiktoria.solvd.model.Discount" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="percentage" property="percentage"/>
+    </resultMap>
+</mapper>

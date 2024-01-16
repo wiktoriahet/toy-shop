@@ -24,5 +24,6 @@
         <mapper resource="phone.mapper.xml"/>
         <mapper resource="toy.mapper.xml"/>
         <mapper resource="toybrand.mapper.xml"/>
+        <mapper resource="discount.mapper.xml"/>
     </mappers>
 </configuration>
