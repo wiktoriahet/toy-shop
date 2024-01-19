@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pl.hetman.wiktoria.solvd.persistence.OrderPriceRepository">
+
+    <select id="findById" resultMap="OrderPriceResultMap">
+        SELECT *
+        FROM toy_shop_fixed.orders_prices
+        WHERE order_id = #{id}
+    </select>
+    <resultMap id="OrderPriceResultMap" type="pl.hetman.wiktoria.solvd.model.OrderPrice" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="prcie" property="price"/>
+    </resultMap>
+</mapper>

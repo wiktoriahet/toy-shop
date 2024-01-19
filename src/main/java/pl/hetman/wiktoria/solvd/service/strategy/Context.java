@@ -2,6 +2,7 @@ package pl.hetman.wiktoria.solvd.service.strategy;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pl.hetman.wiktoria.solvd.exceptions.ToyShopException;
 import pl.hetman.wiktoria.solvd.model.Order;
 
 public class Context {
@@ -14,7 +15,7 @@ public class Context {
         this.strategy = strategy;
     }
 
-    public boolean executeStrategy(Order firstOrder, Order secondOrder) {
+    public boolean executeStrategy(Order firstOrder, Order secondOrder) throws ToyShopException {
         LOGGER.info("executeStrategy(" + firstOrder + ", " + secondOrder + ")");
         LOGGER.info("executeStrategy(...)");
         return strategy.orderComparision(firstOrder, secondOrder);
